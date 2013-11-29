@@ -6,3 +6,5 @@ This project provides two Java classes that implement
 
 Notably those algorithms are used by the
 [Google Authenticator](http://code.google.com/p/google-authenticator/).
+
+Add 2 test cases
