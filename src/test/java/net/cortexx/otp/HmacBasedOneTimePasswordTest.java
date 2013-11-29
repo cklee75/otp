@@ -10,10 +10,14 @@ public class HmacBasedOneTimePasswordTest {
 
 	@Test
 	public void testHmacBasedOneTimePassword() throws DecodingException {
+		int numberOfDigits = 6;
 		HmacBasedOneTimePassword hotpBasedOneTimePassword = new HmacBasedOneTimePassword(
-				Algorithm.SHA1, 6, Base32String.decode("2222"));
-		Integer p = hotpBasedOneTimePassword.generatePassword(1);
-		System.out.println(p);
-		assertTrue(p.toString().length()== 6);
+				Algorithm.SHA1, numberOfDigits, Base32String.decode("AAAQEAYEAUDAOCAJBIFQYDIOB4"));
+		
+		for (int i=0; i<10; ++i) {
+			Integer p = hotpBasedOneTimePassword.generatePassword(i);
+			System.out.println(p);
+			assertTrue(p.toString().length()== numberOfDigits);
+		}
 	}
 }

@@ -21,7 +21,7 @@ public class TimeBasedOneTimePasswordTest {
 		TimeBasedOneTimePassword totp = new TimeBasedOneTimePassword(30,
 				TimeUnit.SECONDS, 2);
 		HmacBasedOneTimePassword hotp = new HmacBasedOneTimePassword(
-				Algorithm.SHA1, 8, Base32String.decode("2222"));
+				Algorithm.SHA1, 6, Base32String.decode("JBSWY3DPEHPK3PXP"));
 		int p = totp.generatePassword(hotp);
 		System.out.println(p);
 		assertTrue(totp.validate(p, hotp));
